@@ -35,15 +35,16 @@ const useData = (q = "", dietType = "balanced", uri = "", baseUrl) => {
             app_id: "a7d231db",
             app_key: "3f704da2f4432db96f2ca99f96d2376d",
             ...query,
-          }),{
-            headers: {
-              "Edamam-Account-User": "a7d231db", 
-            },
-          }
+          }),
+        {
+          headers: {
+            "Edamam-Account-User": "a7d231db",
+          },
+        },
       )
         .then((response) => response.json())
         .then((json) => {
-          console.log("API Response: ", json); 
+          console.log("API Response: ", json);
           if (!ignore) {
             setData(json.hits);
             if (q == "" && dietType == "balanced" && uri == "") {
